@@ -159,18 +159,35 @@ export default function HomePage({
 
             {/* Logo */}
             <div style={{ display:"flex", alignItems:"center", gap:"14px" }}>
-              <div style={{
-                width:"48px", height:"48px", borderRadius:"14px", flexShrink:0,
-                background:"linear-gradient(135deg,rgba(212,175,55,.18),rgba(45,138,94,.18))",
-                border:"1px solid rgba(212,175,55,.4)",
-                display:"flex", alignItems:"center", justifyContent:"center",
-                boxShadow:"0 0 24px rgba(212,175,55,.15)",
-                position:"relative", overflow:"hidden",
-              }}>
-                <div style={{ position:"absolute",top:0,left:"50%",transform:"translateX(-50%)",
-                  width:"1px",height:"48px",background:"linear-gradient(180deg,rgba(212,175,55,.6),transparent)" }}/>
-                <span style={{ fontSize:"22px" }}>☪</span>
-              </div>
+              <div style={{ 
+  position: "relative", 
+  display: "flex", 
+  flexDirection: "column", 
+  alignItems: "center" 
+}}>
+  {/* 1. الخط المذهب العلوي (Golden Thread) */}
+  <div style={{ 
+    width: "1px", 
+    height: "60px", 
+    background: "linear-gradient(180deg, transparent, rgba(212, 175, 55, 0.8))" 
+  }} />
+
+  {/* 2. أيقونة الهلال والنجمة (SVG White) لضمان اللون الأبيض الصريح */}
+  <div style={{ marginTop: "8px" }}>
+    <svg 
+      width="24" 
+      height="24" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path 
+        d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.1373 21.8906 10.3001 21.6853 9.5C20.409 10.9931 18.5178 12 16.4 12C12.313 12 9 8.687 9 4.6C9 3.61114 9.19442 2.66771 9.54563 1.80532C10.3121 1.93291 11.1276 2 12 2ZM18 2L18.435 2.88197L19.4142 3L18.7071 3.70711L18.8727 4.68614L18 4.22361L17.1273 4.68614L17.2929 3.70711L16.5858 3L17.565 2.88197L18 2Z" 
+        fill="white" 
+      />
+    </svg>
+  </div>
+</div>
               <div>
                 <div style={{ color:"rgba(200,220,200,.4)",fontSize:"10px",letterSpacing:"3px",fontFamily:"Tajawal,sans-serif" }}>QURAN TADABBUR</div>
                 <div style={{ color:"#d4af37",fontSize:"13px",fontFamily:"Tajawal,sans-serif" }}>مصحف التدبر</div>
