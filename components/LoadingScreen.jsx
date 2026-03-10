@@ -300,7 +300,8 @@ export default function LoadingScreen({ onDone }) {
               transition: "width 0.1s linear",
             }} />
           </div>
-          <div style={{
+          <div style=
+            {{
             color: "rgba(212,175,55,0.5)", fontSize: "11px",
             fontFamily: "Tajawal, sans-serif", marginTop: "12px",
           }}>
