@@ -212,14 +212,35 @@ export default function LoadingScreen({ onDone }) {
                 boxShadow: "0 0 20px rgba(212,175,55,0.3)",
                 position: "relative", zIndex: 1,
               }}>
-                <div style={{
-                  width: "50px", height: "50px",
-                  borderRadius: "50%",
-                  border: "1px solid rgba(212,175,55,0.35)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                }}>
-                  <span style={{ color: "#d4af37", fontSize: "22px", fontFamily: "Amiri, serif" }}>☪</span>
-                </div>
+              <div style={{ 
+  position: "relative", 
+  display: "flex", 
+  flexDirection: "column", 
+  alignItems: "center" 
+}}>
+  {/* 1. الخط المذهب العلوي (Golden Thread) */}
+  <div style={{ 
+    width: "1px", 
+    height: "60px", 
+    background: "linear-gradient(180deg, transparent, rgba(212, 175, 55, 0.8))" 
+  }} />
+
+  {/* 2. أيقونة الهلال والنجمة (SVG White) لضمان اللون الأبيض الصريح */}
+  <div style={{ marginTop: "-70px" }}>
+    <svg 
+      width="24" 
+      height="24" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path 
+        d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.1373 21.8906 10.3001 21.6853 9.5C20.409 10.9931 18.5178 12 16.4 12C12.313 12 9 8.687 9 4.6C9 3.61114 9.19442 2.66771 9.54563 1.80532C10.3121 1.93291 11.1276 2 12 2ZM18 2L18.435 2.88197L19.4142 3L18.7071 3.70711L18.8727 4.68614L18 4.22361L17.1273 4.68614L17.2929 3.70711L16.5858 3L17.565 2.88197L18 2Z" 
+        fill="white" 
+      />
+    </svg>
+  </div>
+</div>
               </div>
 
               <div style={{
