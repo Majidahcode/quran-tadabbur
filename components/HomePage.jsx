@@ -33,8 +33,9 @@ export default function HomePage({
 
   // QuranStand natural dims ≈ 480px W × 530px H (book 292 + rahl 170 + label)
   // TadabburBook natural dims ≈ 320px W × 310px H (book 280 + depth+label)
-  const bookScale  = isMobile ? 0.58 : isTablet ? 0.74 : 1;
-  const tadabScale = isMobile ? 0.72 : isTablet ? 0.84 : 1;
+  // ── كبّرنا الحجم على الموبايل لوضوح النصوص ──
+  const bookScale  = isMobile ? 0.78 : isTablet ? 0.85 : 1;
+  const tadabScale = isMobile ? 0.88 : isTablet ? 0.90 : 1;
 
   // Negative margin to collapse whitespace left by transform:scale (layout doesn't reflow)
   const bookMB  = -Math.round((1 - bookScale)  * 530 * 0.85);
@@ -159,21 +160,18 @@ export default function HomePage({
 
             {/* Logo */}
             <div style={{ display:"flex", alignItems:"center", gap:"14px" }}>
-              <div style={{ 
-  position: "relative", 
-  display: "flex", 
-  flexDirection: "column", 
-  alignItems: "center" 
-}}>
-  {/* 1. الخط المذهب العلوي (Golden Thread) */}
-  <div style={{ 
-    width: "1px", 
-    height: "60px", 
-    background: "linear-gradient(180deg, transparent, rgba(212, 175, 55, 0.8))" 
-  }} />
-
-  {/* 2. أيقونة الهلال والنجمة (SVG White) لضمان اللون الأبيض الصريح */}
-  <div style={{ marginTop: "8px" }}>
+              <div style={{
+                width:"48px", height:"48px", borderRadius:"14px", flexShrink:0,
+                background:"linear-gradient(135deg,rgba(212,175,55,.18),rgba(45,138,94,.18))",
+                border:"1px solid rgba(212,175,55,.4)",
+                display:"flex", alignItems:"center", justifyContent:"center",
+                boxShadow:"0 0 24px rgba(212,175,55,.15)",
+                position:"relative", overflow:"hidden",
+              }}>
+                <div style={{ position:"absolute",top:0,left:"50%",transform:"translateX(-50%)",
+                  width:"1px",height:"48px",background:"linear-gradient(180deg,rgba(212,175,55,.6),transparent)" }}/>
+                {/* Crescent + Star — SVG ذهبي حقيقي بدون emoji */}
+             <div style={{ marginTop: "-0px" }}>
     <svg 
       width="24" 
       height="24" 
@@ -187,7 +185,7 @@ export default function HomePage({
       />
     </svg>
   </div>
-</div>
+              </div>
               <div>
                 <div style={{ color:"rgba(200,220,200,.4)",fontSize:"10px",letterSpacing:"3px",fontFamily:"Tajawal,sans-serif" }}>QURAN TADABBUR</div>
                 <div style={{ color:"#d4af37",fontSize:"13px",fontFamily:"Tajawal,sans-serif" }}>مصحف التدبر</div>
@@ -214,8 +212,9 @@ export default function HomePage({
               fontSize: isMobile?"12px":"15px",
               lineHeight:"1.85", fontFamily:"Tajawal,sans-serif",
             }}>
-اذا اردت ان تكلم الله فعليك بالصلاه , واذا اردت ان يكلمك الله فعليك عليك عليك بالقرآن  ❤️‍🩹             </p>
-<br />كل هالارقام موجوده عبث لاا وربي انا وانت موجودين في القران ..دور على نفسك في فهرسك دليلك ي انسان
+              ليس مجرد قراءة — بل رحلة تدبر تفتح لك أبواب التغيير الحقيقي في حياتك
+            </p>
+
             {/* Stats */}
             <div style={{ display:"flex", gap:"10px", flexWrap:"wrap" }}>
               {[{n:"١١٤",l:"سورة"},{n:"٦٢٣٦",l:"آية"},{n:"٣٠",l:"جزءاً"}].map((s) => (
@@ -237,7 +236,8 @@ export default function HomePage({
             {/* Surah Selector */}
             <div ref={dropRef} style={{ position:"relative" }}>
               <div style={{ color:"rgba(200,200,180,.4)",fontSize:"11px",fontFamily:"Tajawal,sans-serif",marginBottom:"7px" }}>
-اختر السوره الي قريبه من قلبك               </div>
+                السورة المختارة
+              </div>
 
               {/* Selected surah card */}
               <div
